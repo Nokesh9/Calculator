@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+    <style>
+       body{
+         /* font-weight: bolder; */
+        } 
+        button{
+          height: 100px;
+             width: 100px;
+            background-color: rgb(231, 219, 111);
+            font-size:xx-large;
+            border-radius: 10px;
+            color:rgb(0, 0, 0); */
+        
+  background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);
+  border-radius: .5rem;
+  /* box-sizing: border-box; */
+  color: #FFFFFF;
+  /* display: flex;
+  justify-content: center; */
+  padding: 20px;
+  text-decoration: none;
+  width: 100%;
+  border: 0;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin: 2px;
+}
+
+button:hover {
+  background-image: linear-gradient(-180deg, #1D95C9 0%, #17759C 100%);
+}
+
+@media (min-width: 768px) {
+  button{
+    padding: 1rem 2rem;
+  }
+}
+        
+        
+        
+        #result{
+            height: 100px;
+            width: 350px;
+            background-color:rgb(219, 219, 219);
+            text-align: center;
+            font-size: xx-large;
+            border-radius: 15px;
+            color: rgb(0, 0, 0);
+            margin: 10px;
+            margin-bottom: 10px;
+        }
+        .container{
+            width: 400px;
+            border: 3px solid black;
+            padding: 20px;
+            border-radius: 10px;
+            background: rgb(14,23,143);
+            background: linear-gradient(0deg, rgba(14,23,143,1) 48%, rgba(0,212,255,1) 100%);
+
+
+            
+        }
+        h1{
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+    </style>
+</head>
+<body>
+    <center>
+ 
+    <h1>CALCULATOR</h1>
+    <div class="container">
+    <input type="text" placeholder="0" id="result">
+ 
+    <table>
+        <tr>
+            <td><button onclick="display('7')">7</button></td>
+            <td><button onclick="display('8')">8</button></td>
+            <td><button onclick="display('9')">9</button></td>
+            <td><button onclick="display('+')">+</button></td>
+
+        </tr>
+        <tr>
+            <td><button onclick="display('4')">4</button></td>
+            <td><button onclick="display('5')">5</button></td>
+            <td><button onclick="display('6')">6</button></td>
+            <td><button onclick="display('-')">-</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="display('1')">1</button></td>
+            <td><button onclick="display('2')">2</button></td>
+            <td><button onclick="display('3')">3</button></td>
+            <td><button onclick="display('*')">*</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="display('0')">0</button></td>
+            <td><button onclick="clr('c')">c</button></td>
+            <td><button onclick="display('/')">/</button></td>
+            <td><button onclick="calculate('=')">=</button></td>
+        </tr>
+    </table>
+    </div>
+</center>
+<script>
+    let output=document.getElementById("result")
+    function display(num){
+        output.value+=num
+    }
+    function calculate(){
+        try{
+            output.value=eval(output.value);
+
+        }
+        catch(err)
+        {
+            alert("invalid")
+
+        }
+    }
+    function clr(){
+     output.value="";
+    }
+</script>
+</body>
+</html>
